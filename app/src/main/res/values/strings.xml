@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MTG App</string>
+    <string name="loading">Loading</string>
+
+    <string name="facebook_app_id">211283533074656</string>
+    <string name="fb_login_protocol_scheme">fb211283533074656</string>
+
+    <string name="google_id_token">95079319134-nn9j2glljsu8h0do32i7pjg1gjnp87o0.apps.googleusercontent.com</string>
+
+</resources>

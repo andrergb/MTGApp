@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "95079319134",
+    "firebase_url": "https://argb-mtg-app.firebaseio.com",
+    "project_id": "argb-mtg-app",
+    "storage_bucket": "argb-mtg-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95079319134:android:9c9ec17471b45c8a",
+        "android_client_info": {
+          "package_name": "com.argb.mtgapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95079319134-nn9j2glljsu8h0do32i7pjg1gjnp87o0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-1lO5zUkJ8MfqqqFiYoIe43N-8X9UHsw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
