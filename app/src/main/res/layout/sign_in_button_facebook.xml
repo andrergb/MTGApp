@@ -2,15 +2,16 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="40dp"
+    android:layout_height="@dimen/sign_in_button_height"
     android:background="@drawable/sign_in_button_background"
-    android:backgroundTint="#4267B1"
-    android:padding="8dp">
+    android:backgroundTint="@color/sign_in_button_background_facebook"
+    android:foreground="@drawable/sign_in_button_ripple"
+    android:padding="@dimen/sign_in_button_padding">
 
     <ImageView
         android:id="@+id/button_logo"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="@dimen/sign_in_button_image_size"
+        android:layout_height="@dimen/sign_in_button_image_size"
         android:scaleType="fitXY"
         android:src="@drawable/sign_in_button_facebook_icon"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="Sign in with Facebook"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
+        android:textSize="@dimen/sign_in_button_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_logo"
