@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#8747b3</color>
-    <color name="colorPrimaryDark">#542C70</color>
-    <color name="colorAccent">#73B347</color>
+    <color name="colorPrimary">#6D47B3</color>
+    <color name="colorPrimaryDark">#442C70</color>
+    <color name="colorAccent">#8DB347</color>
 
     <color name="sign_in_button_background_google">#FFFFFF</color>
     <color name="sign_in_button_background_facebook">#4267B1</color>
