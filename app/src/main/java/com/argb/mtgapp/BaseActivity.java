@@ -2,14 +2,20 @@ package com.argb.mtgapp;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import androidx.annotation.VisibleForTesting;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 public class BaseActivity extends AppCompatActivity {
 
-    @VisibleForTesting
+    @Override
+    public void onStop() {
+        super.onStop();
+        hideProgressDialog();
+    }
+
     public ProgressDialog mProgressDialog;
 
     public void showProgressDialog() {
@@ -35,10 +41,10 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        hideProgressDialog();
+    public void hideToolbar() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
     }
-
 }
