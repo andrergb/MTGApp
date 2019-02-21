@@ -2,10 +2,8 @@ package com.argb.mtgapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -21,6 +19,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
@@ -30,6 +29,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.util.Arrays;
+
+import androidx.annotation.NonNull;
 
 public class SignInActivity extends BaseActivity implements View.OnClickListener {
 
@@ -48,7 +49,6 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
         hideToolbar();
 
         mFirebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mFirebaseAuth.getCurrentUser();
 
         // Initialize Google Login button
         findViewById(R.id.google_sign_in_button).setOnClickListener(this);
@@ -76,7 +76,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
             @Override
             public void onError(FacebookException error) {
-                Log.d(TAG, "facebook:onError", error);
+                Log.w(TAG, "facebook:onError", error);
             }
         });
     }
@@ -143,11 +143,10 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                 FirebaseUser user = mFirebaseAuth.getCurrentUser();
                 updateUI(user);
             } else {
-                Toast.makeText(SignInActivity.this, "signInWithCredential:failure", Toast.LENGTH_SHORT).show();
-                Exception ex = task.getException();
-                Log.w(TAG, "signInWithCredential:failure", ex);
-                if (ex instanceof FirebaseAuthUserCollisionException) {
-                    //TODO link accounts;
+                Exception exception = task.getException();
+                Log.w(TAG, "signInWithCredential:failure", exception);
+                if (exception instanceof FirebaseAuthUserCollisionException) {
+                    Snackbar.make(findViewById(android.R.id.content),"FirebaseAuthUserCollisionException", Snackbar.LENGTH_SHORT).show();
                 }
             }
 
