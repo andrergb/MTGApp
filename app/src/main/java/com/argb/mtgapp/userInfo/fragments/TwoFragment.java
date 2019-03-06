@@ -1,4 +1,4 @@
-package com.argb.mtgapp.profile.fragments;
+package com.argb.mtgapp.userInfo.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,8 +9,8 @@ import com.argb.mtgapp.R;
 
 import androidx.fragment.app.Fragment;
 
-public class FourFragment extends Fragment {
-    public FourFragment() {
+public class TwoFragment extends Fragment {
+    public TwoFragment() {
     }
 
     @Override
@@ -20,6 +20,6 @@ public class FourFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_four, container, false);
+        return inflater.inflate(R.layout.fragment_two, container, false);
     }
 }

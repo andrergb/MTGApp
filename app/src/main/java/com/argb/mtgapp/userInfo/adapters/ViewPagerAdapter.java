@@ -1,4 +1,4 @@
-package com.argb.mtgapp.profile.adapters;
+package com.argb.mtgapp.userInfo.adapters;
 
 import java.util.ArrayList;
 import java.util.List;
