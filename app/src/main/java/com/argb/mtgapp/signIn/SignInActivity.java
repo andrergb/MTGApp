@@ -1,4 +1,4 @@
-package com.argb.mtgapp.signin;
+package com.argb.mtgapp.signIn;
 
 import android.content.Intent;
 import android.os.Bundle;

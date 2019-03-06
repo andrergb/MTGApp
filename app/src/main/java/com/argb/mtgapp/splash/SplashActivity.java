@@ -7,7 +7,7 @@ import android.os.Handler;
 import com.argb.mtgapp.BaseActivity;
 import com.argb.mtgapp.MainActivity;
 import com.argb.mtgapp.R;
-import com.argb.mtgapp.signin.SignInActivity;
+import com.argb.mtgapp.signIn.SignInActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

@@ -4,8 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.argb.mtgapp.gameSetup.GameSetupActivity;
+import com.argb.mtgapp.signIn.SignInActivity;
 import com.argb.mtgapp.userInfo.UserInfoActivity;
-import com.argb.mtgapp.signin.SignInActivity;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -29,6 +30,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         findViewById(R.id.sign_out_button).setOnClickListener(this);
         findViewById(R.id.user_info).setOnClickListener(this);
+        findViewById(R.id.game_setup).setOnClickListener(this);
 
         // Configure sign-in to request the user's ID, email address, and basic profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -50,6 +52,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.user_info:
                 startActivity(new Intent(MainActivity.this, UserInfoActivity.class));
+                break;
+            case R.id.game_setup:
+                startActivity(new Intent(MainActivity.this, GameSetupActivity.class));
                 break;
         }
     }
