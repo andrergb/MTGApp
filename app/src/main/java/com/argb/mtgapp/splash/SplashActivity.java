@@ -1,9 +1,13 @@
-package com.argb.mtgapp;
+package com.argb.mtgapp.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.argb.mtgapp.BaseActivity;
+import com.argb.mtgapp.MainActivity;
+import com.argb.mtgapp.R;
+import com.argb.mtgapp.signin.SignInActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

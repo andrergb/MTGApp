@@ -6,4 +6,5 @@
     <dimen name="sign_in_button_image_size">18dp</dimen>
     <dimen name="sign_in_button_text_size">18sp</dimen>
     <dimen name="sign_in_button_padding">8dp</dimen>
+    <dimen name="collapsing_toolbar_height">280dp</dimen>
 </resources>

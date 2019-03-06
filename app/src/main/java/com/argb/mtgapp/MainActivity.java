@@ -2,9 +2,10 @@ package com.argb.mtgapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.View;
 
+import com.argb.mtgapp.profile.ProfileActivity;
+import com.argb.mtgapp.signin.SignInActivity;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -13,6 +14,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import androidx.annotation.NonNull;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -25,6 +28,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.sign_out_button).setOnClickListener(this);
+        findViewById(R.id.profile).setOnClickListener(this);
 
         // Configure sign-in to request the user's ID, email address, and basic profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -43,6 +47,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.sign_out_button:
                 signOut();
+                break;
+            case R.id.profile:
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                 break;
         }
     }

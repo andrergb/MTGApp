@@ -1,10 +1,13 @@
-package com.argb.mtgapp;
+package com.argb.mtgapp.signin;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.argb.mtgapp.BaseActivity;
+import com.argb.mtgapp.MainActivity;
+import com.argb.mtgapp.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
