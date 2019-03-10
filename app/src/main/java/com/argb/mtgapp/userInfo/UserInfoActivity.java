@@ -5,7 +5,7 @@ import android.widget.ImageView;
 
 import com.argb.mtgapp.R;
 import com.argb.mtgapp.userInfo.adapters.ViewPagerAdapter;
-import com.argb.mtgapp.userInfo.fragments.FourFragment;
+import com.argb.mtgapp.userInfo.friendList.view.fragments.FriendListFragment;
 import com.argb.mtgapp.userInfo.fragments.OneFragment;
 import com.argb.mtgapp.userInfo.fragments.ThreeFragment;
 import com.argb.mtgapp.userInfo.fragments.TwoFragment;
@@ -46,7 +46,7 @@ public class UserInfoActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(mUser.getPhotoUrl())
                 .apply(RequestOptions.circleCropTransform())
-//                .placeholder(R.drawable.ic_placeholder)
+//                .placeholder(R.drawable.ic_placeholder) /*TODO*/
                 .into((ImageView) findViewById(R.id.user_info_avatar));
     }
 
@@ -55,7 +55,7 @@ public class UserInfoActivity extends AppCompatActivity {
         adapter.addFragment(new OneFragment(), "Personal");
         adapter.addFragment(new TwoFragment(), "Games");
         adapter.addFragment(new ThreeFragment(), "Decks");
-        adapter.addFragment(new FourFragment(), "Friends");
+        adapter.addFragment(new FriendListFragment(), "Friends");
         viewPager.setAdapter(adapter);
     }
 }

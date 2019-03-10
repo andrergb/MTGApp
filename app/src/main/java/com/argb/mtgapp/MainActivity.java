@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.argb.mtgapp.gameSetup.GameSetupActivity;
-import com.argb.mtgapp.signIn.SignInActivity;
+import com.argb.mtgapp.main.signIn.SignInActivity;
 import com.argb.mtgapp.userInfo.UserInfoActivity;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;

@@ -42,7 +42,7 @@
         </activity>
 
         <activity
-            android:name="com.argb.mtgapp.signIn.SignInActivity"
+            android:name=".main.signIn.SignInActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity android:name="com.argb.mtgapp.MainActivity" />

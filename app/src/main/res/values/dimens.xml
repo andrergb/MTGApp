@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- DEFAULT -->
+    <dimen name="default_row_height">56dp</dimen>
+    <dimen name="default_row_padding_horizontal">16dp</dimen>
+    <dimen name="default_avatar_size">40dp</dimen>
+
     <!-- SIGN IN -->
     <dimen name="sign_in_button_radius">6dp</dimen>
     <dimen name="sign_in_button_width">300dp</dimen>
     <dimen name="sign_in_button_image_size">18dp</dimen>
     <dimen name="sign_in_button_text_size">18sp</dimen>
     <dimen name="sign_in_button_padding">8dp</dimen>
+
+    <!-- TOOLBAR -->
     <dimen name="collapsing_toolbar_height">280dp</dimen>
+
+    <!-- ROUND RECT -->
+    <dimen name="round_rect_stroke_width">2dp</dimen>
+    <dimen name="round_rect_radius">1000dp</dimen>
+
+    <!-- FRIEND REQUEST BUTTONS -->
+    <dimen name="friend_request_parent_button_width">150dp</dimen>
+    <dimen name="friend_request_parent_button_height">25dp</dimen>
+    <dimen name="friend_request_button_margin">4dp</dimen>
+
+    <!-- FRIEND ROW -->
+    <dimen name="friend_row_text_padding_start">16dp</dimen>
+    <dimen name="friend_row_text_padding_end">8dp</dimen>
 </resources>
