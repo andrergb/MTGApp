@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.argb.mtgapp.gameSetup.GameSetupActivity;
+import com.argb.mtgapp.main.Constants;
 import com.argb.mtgapp.main.signIn.SignInActivity;
 import com.argb.mtgapp.userInfo.UserInfoActivity;
 import com.facebook.login.LoginManager;
@@ -51,7 +52,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 signOut();
                 break;
             case R.id.user_info:
-                startActivity(new Intent(MainActivity.this, UserInfoActivity.class));
+                Intent userInfoIntent = new Intent(MainActivity.this, UserInfoActivity.class);
+                userInfoIntent.putExtra(Constants.INTENT_EXTRA_IS_SELF_PROFILE, true);
+                startActivity(userInfoIntent);
                 break;
             case R.id.game_setup:
                 startActivity(new Intent(MainActivity.this, GameSetupActivity.class));

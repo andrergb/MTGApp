@@ -96,4 +96,10 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+
+    <!-- User Info -->
+    <string name="user_info_title_personal">Personal</string>
+    <string name="user_info_title_games">Games</string>
+    <string name="user_info_title_decks">Decks</string>
+    <string name="user_info_title_friends">Friends</string>
 </resources>
