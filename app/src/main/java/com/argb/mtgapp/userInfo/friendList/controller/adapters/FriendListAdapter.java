@@ -46,7 +46,7 @@ public class FriendListAdapter extends RecyclerView.Adapter<FriendListAdapter.Vi
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mFriendListInterface.OnFriendClickListener(currentPlayer);
+                mFriendListInterface.OnFriendClickListener(v, currentPlayer);
             }
         });
 
@@ -110,7 +110,7 @@ public class FriendListAdapter extends RecyclerView.Adapter<FriendListAdapter.Vi
 
         void OnDenyClickListener(Player player);
 
-        void OnFriendClickListener(Player player);
+        void OnFriendClickListener(View view, Player player);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -123,7 +123,7 @@ public class FriendListAdapter extends RecyclerView.Adapter<FriendListAdapter.Vi
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.avatar = itemView.findViewById(R.id.friend_row_avatar);
+            this.avatar = itemView.findViewById(R.id.user_avatar);
             this.name = itemView.findViewById(R.id.friend_row_name);
             this.requestButtons = itemView.findViewById(R.id.friend_row_request_buttons);
             this.denyButton = requestButtons.findViewById(R.id.friend_request_deny_button);

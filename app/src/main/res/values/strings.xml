@@ -2,10 +2,10 @@
     <string name="app_name">MTG App</string>
     <string name="loading">Loading</string>
 
-    <string name="facebook_app_id">211283533074656</string>
-    <string name="fb_login_protocol_scheme">fb211283533074656</string>
+    <string name="facebook_app_id" translatable="false">211283533074656</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb211283533074656</string>
 
-    <string name="google_id_token">95079319134-nn9j2glljsu8h0do32i7pjg1gjnp87o0.apps.googleusercontent.com</string>
+    <string name="google_id_token" translatable="false">95079319134-nn9j2glljsu8h0do32i7pjg1gjnp87o0.apps.googleusercontent.com</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -102,4 +102,7 @@
     <string name="user_info_title_games">Games</string>
     <string name="user_info_title_decks">Decks</string>
     <string name="user_info_title_friends">Friends</string>
+
+    <!-- Shared Elements -->
+    <string name="shared_element_avatar" translatable="false">avatar</string>
 </resources>

@@ -13,6 +13,7 @@ import com.argb.mtgapp.userInfo.fragments.TwoFragment;
 import com.argb.mtgapp.userInfo.friendList.view.fragments.FriendListFragment;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,10 +43,33 @@ public class UserInfoActivity extends AppCompatActivity {
             }
         } else {
             //TODO load user
+            currentPlayer.setName("Test");
+            currentPlayer.setAvatarUrl("https://api.adorable.io/avatars/285/" + currentPlayer.getName());
         }
 
-        CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
+        final ImageView avatar = findViewById(R.id.user_avatar);
+        avatar.setTransitionName(getString(R.string.shared_element_avatar));
+
+        final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle(currentPlayer.getName());
+
+        AppBarLayout appBarLayout = findViewById(R.id.app_bar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (Math.abs(verticalOffset) == appBarLayout.getTotalScrollRange()) { // Collapsed
+                    avatar.setTransitionName(null);
+                } else if (verticalOffset == 0) { // Expanded
+                    avatar.setTransitionName(getString(R.string.shared_element_avatar));
+                } else { // Moving
+                    if (collapsingToolbarLayout.getContentScrim() != null && collapsingToolbarLayout.getContentScrim().getAlpha() == 0) {
+                        avatar.setTransitionName(getString(R.string.shared_element_avatar));
+                    } else {
+                        avatar.setTransitionName(null);
+                    }
+                }
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -60,7 +84,7 @@ public class UserInfoActivity extends AppCompatActivity {
                 .load(currentPlayer.getAvatarUrl())
                 .apply(RequestOptions.circleCropTransform())
 //                .placeholder(R.drawable.ic_placeholder) /*TODO*/
-                .into((ImageView) findViewById(R.id.user_info_avatar));
+                .into(avatar);
     }
 
     private void setupViewPager(ViewPager viewPager, boolean isSelfProfile) {

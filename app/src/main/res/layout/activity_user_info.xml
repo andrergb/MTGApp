@@ -8,6 +8,7 @@
     tools:context=".userInfo.UserInfoActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white">
@@ -22,7 +23,7 @@
             app:toolbarId="@+id/toolbar">
 
             <ImageView
-                android:id="@+id/user_info_avatar"
+                android:id="@+id/user_avatar"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"

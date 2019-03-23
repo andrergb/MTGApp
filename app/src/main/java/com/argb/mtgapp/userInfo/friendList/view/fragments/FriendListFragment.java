@@ -1,5 +1,7 @@
 package com.argb.mtgapp.userInfo.friendList.view.fragments;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.Toast;
 import com.argb.mtgapp.R;
 import com.argb.mtgapp.main.Constants;
 import com.argb.mtgapp.main.model.Player;
+import com.argb.mtgapp.userInfo.UserInfoActivity;
 import com.argb.mtgapp.userInfo.friendList.controller.adapters.FriendListAdapter;
 
 import java.util.ArrayList;
@@ -153,7 +156,11 @@ public class FriendListFragment extends Fragment implements FriendListAdapter.Fr
     }
 
     @Override
-    public void OnFriendClickListener(Player player) {
-        Toast.makeText(getContext(), "Friend: " + player.getName(), Toast.LENGTH_SHORT).show();
+    public void OnFriendClickListener(View view, Player player) {
+        // TODO put user
+        ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(getActivity(), view.findViewById(R.id.user_avatar), getString(R.string.shared_element_avatar));
+        Intent userInfoIntent = new Intent(getContext(), UserInfoActivity.class);
+        userInfoIntent.putExtra(Constants.INTENT_EXTRA_IS_SELF_PROFILE, false);
+        startActivity(userInfoIntent, activityOptions.toBundle());
     }
 }
